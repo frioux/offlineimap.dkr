@@ -1,0 +1,3 @@
+#!/bin/dash
+
+exec 2>&1 /home/user/bin/cerberus

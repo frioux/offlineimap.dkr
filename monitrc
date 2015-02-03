@@ -6,17 +6,10 @@ set httpd
   allow frew:test
 
 check process cerberus
-  with pidfile /home/frew/services/cerberus/supervise/pid
+  with pidfile /etc/service/cerberus/supervise/pid
 
 check process offlineimap
-  with pidfile /home/frew/services/offlineimap/supervise/pid
+  with pidfile /etc/service/offlineimap/supervise/pid
   start program = "/usr/bin/sv start offlineimap"
   stop program = "/usr/bin/sv stop offlineimap"
   if total memory > 1 GB for 5 cycles then restart
-
-check process syncthing
-  with pidfile /home/frew/services/syncthing/supervise/pid
-
-check process weather
-  with pidfile /home/frew/services/weather/supervise/pid
-
