@@ -12,7 +12,7 @@ ADD ./offlineimap.py /home/user/.offlineimap.py
 RUN env DEBIAN_FRONTEND=noninteractive apt-get update \
  && useradd user \
  && chown 1000:1000 /opt/var /home/user /home/user/.offlineimaprc /home/user/.offlineimap.py \
- && apt-get install --no-install-recommends -y \
+ && env DEBIAN_FRONTEND=noninteractive apt-get install --no-install-recommends -y \
     daemontools                                \
     libio-all-perl                             \
     monit                                      \
