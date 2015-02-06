@@ -8,6 +8,7 @@ EXPOSE 2812
 ADD ./services /etc/service/
 ADD ./offlineimaprc /home/user/.offlineimaprc
 ADD ./offlineimap.py /home/user/.offlineimap.py
+ADD ./bin/cerberus /home/user/bin/cerberus
 
 RUN env DEBIAN_FRONTEND=noninteractive apt-get update \
  && useradd user \
