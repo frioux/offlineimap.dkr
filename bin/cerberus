@@ -5,7 +5,7 @@ use warnings;
 
 use IO::All;
 
-my $dir = "/etc/service/offlineimap/supervise";
+my $dir = "/home/user/services/offlineimap/supervise";
 
 while (1) {
    sleep 60 * 10;
@@ -17,7 +17,7 @@ sub running {
    my $stat = io->file("$dir/stat")->slurp;
    $stat =~ /run/ || $stat eq ''
 }
-sub last_logged { [io->file("/var/log/offlineimap/current")->stat]->[9] }
+sub last_logged { [io->file("/opt/log/offlineimap/current")->stat]->[9] }
 
 sub kill_it {
    warn "killing!\n";

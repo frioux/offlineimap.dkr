@@ -17,7 +17,7 @@ RUN apt-add-repository -y ppa:rsrchboy/offline-mail \
  && useradd user \
  && ln -s /opt/etc/netrc /home/user/.netrc \
  && ln -s /opt/var/index /home/user/.offlineimap \
- && chown 1000:1000 /opt/var/mail /opt/var/index /home/user /home/user/.offlineimaprc /home/user/.offlineimap.py \
+ && chown 1000:1000 /opt/var/mail /opt/var/index /home/user -R \
  && env DEBIAN_FRONTEND=noninteractive apt-get install --no-install-recommends -y \
     daemontools                                \
     libio-all-perl                             \
