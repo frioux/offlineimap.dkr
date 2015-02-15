@@ -5,7 +5,8 @@ CMD ["/sbin/my_init"]
 VOLUME ["/opt/var/mail", "/opt/var/index", "/opt/log", "/opt/etc"]
 EXPOSE 2812
 
-ADD ./services /etc/service/
+ADD ./services/ /etc/service/user
+ADD ./user_services /home/user/services
 ADD ./offlineimaprc /home/user/.offlineimaprc
 ADD ./offlineimap.py /home/user/.offlineimap.py
 ADD ./bin/cerberus /home/user/bin/cerberus

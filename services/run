@@ -1,0 +1,8 @@
+#!/bin/dash
+
+export HOME=/home/user
+
+cd $HOME/services
+chmod 600 /home/user/.monitrc
+chown user /opt/log /opt/var -R
+exec 2>&1 sudo -u user runsvdir -P .

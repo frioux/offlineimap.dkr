@@ -1,5 +1,0 @@
-#!/bin/dash
-
-export HOME=/home/user
-chown user /home/user/.netrc /opt/etc/netrc
-exec 2>&1 sudo -u user offlineimap

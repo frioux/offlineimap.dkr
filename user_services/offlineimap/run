@@ -1,0 +1,4 @@
+#!/bin/dash
+
+export HOME=/home/user
+exec 2>&1 offlineimap
