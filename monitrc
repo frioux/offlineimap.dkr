@@ -1,5 +1,7 @@
 set daemon 15
 
+set logfile /proc/self/fd/1
+
 set httpd
   port 2812
   use address 127.0.0.1
