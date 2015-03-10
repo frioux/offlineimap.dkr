@@ -12,8 +12,7 @@ ADD ./offlineimap.py /home/user/.offlineimap.py
 ADD ./bin/cerberus /home/user/bin/cerberus
 Add ./monitrc /home/user/.monitrc
 
-RUN apt-add-repository -y ppa:rsrchboy/offline-mail \
- && env DEBIAN_FRONTEND=noninteractive apt-get update \
+RUN env DEBIAN_FRONTEND=noninteractive apt-get update \
  && useradd user \
  && ln -s /opt/etc/netrc /home/user/.netrc \
  && ln -s /opt/var/index /home/user/.offlineimap \
@@ -22,5 +21,4 @@ RUN apt-add-repository -y ppa:rsrchboy/offline-mail \
     daemontools                                \
     libio-all-perl                             \
     monit                                      \
-    offlineimap                                \
     sudo

@@ -1,4 +1,8 @@
-#!/bin/dash
+#!/usr/bin/env perl
 
-export HOME=/home/user
-exec 2>&1 offlineimap
+use strict;
+use warnings;
+
+my $s = ('x') x 1_500_000_000; # 1.4G~
+
+sleep 60 while 1;
