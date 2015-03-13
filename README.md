@@ -55,6 +55,13 @@ There's just one port:
    username: `frew`, password: `test`.  At some point I'll make this based on an
    env var.
 
+## Notes on running on Ubuntu
+
+If you care about the memory leak thing (it only happens on one of the three
+machines I use, so you might not) you need to enable `ptrace` for `docker`.  On
+my system, ubuntu 14.10, I had to enable `ptrace` by adding `ptrace,` to the
+first list of options in _/etc/apparmor.d/docker_.
+
 ## Ideas for the future
 
 [Documented on github issues](https://github.com/frioux/offlineimap/issues)
