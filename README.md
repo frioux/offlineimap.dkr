@@ -36,9 +36,9 @@ should set up to use this:
  1. _/opt/etc/netrc_ - this is the file containing your username and password. **required**
     It should look like this:
 
-       machine imap.gmail.com
-       login frioux@gmail.com
-       password foobar
+        machine imap.gmail.com
+        login frioux@gmail.com
+        password foobar
 
  2. _/opt/var/mail_ - this is where the mail gets downloaded to. **required**
 
