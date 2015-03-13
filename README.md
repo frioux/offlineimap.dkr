@@ -18,7 +18,8 @@ container helps to keep `offlineimap` running.  There are two main functions
 with a few smaller bits and bobs.
 
  1. [Restart OfflineIMAP after it leaks to 1 GB](https://github.com/frioux/offlineimap/blob/master/monitrc) - achieved with [monit](http://mmonit.com/monit/)
- 2. Restart OfflineIMAP after it hangs - achieved with ~20 lines of Perl
+ 2. [Restart OfflineIMAP after it
+    hangs](https://github.com/frioux/offlineimap/blob/master/bin/cerberus#L30) - achieved with ~20 lines of Perl
 
 ## Beware
 
