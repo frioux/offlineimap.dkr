@@ -23,7 +23,7 @@ EXPOSE 2812
 
 ADD ./services/ /etc/service/user
 ADD ./user_services /home/user/services
-ADD ./offlineimaprc /home/user/.offlineimaprc
+ADD ./offlineimaprc.tt /home/user/offlineimaprc.tt
 ADD ./offlineimap.py /home/user/.offlineimap.py
 ADD ./bin/cerberus /home/user/bin/cerberus
 ADD ./monitrc /home/user/.monitrc
@@ -37,6 +37,7 @@ RUN apt-add-repository -y ppa:rsrchboy/offline-mail \
  && env DEBIAN_FRONTEND=noninteractive apt-get install --no-install-recommends -y \
     daemontools                                \
     libio-all-perl                             \
+    libtemplate-perl                           \
     monit                                      \
     offlineimap                                \
     sudo

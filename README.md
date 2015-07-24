@@ -7,6 +7,7 @@
           -v           ~/var/mail:/opt/var/mail  \
           -v   ~/.offlineimap/log:/opt/log       \
           -v ~/.offlineimap/index:/opt/var/index \
+          --env EMAIL=frioux@gmail.com           \
           --restart=always frew/offlineimap
 
 ## Description
