@@ -1,5 +1,5 @@
 FROM phusion/baseimage:0.9.16
-MAINTAINER Arthur Axel fREW Schmdit <frioux@gmail.com>
+MAINTAINER Arthur Axel fREW Schmidt <frioux@gmail.com>
 
 # Dockerfile defining a robust offlineimap container
 #
@@ -26,7 +26,7 @@ ADD ./user_services /home/user/services
 ADD ./offlineimaprc /home/user/.offlineimaprc
 ADD ./offlineimap.py /home/user/.offlineimap.py
 ADD ./bin/cerberus /home/user/bin/cerberus
-Add ./monitrc /home/user/.monitrc
+ADD ./monitrc /home/user/.monitrc
 
 RUN apt-add-repository -y ppa:rsrchboy/offline-mail \
  && env DEBIAN_FRONTEND=noninteractive apt-get update \
