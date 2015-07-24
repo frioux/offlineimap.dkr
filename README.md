@@ -71,9 +71,8 @@ There is one required environment variable and a few optional ones:
 
 There's just one port:
 
- * 2812 - this is the web interface for `monit`.  Currently it's hard coded to
-   username: `frew`, password: `test`.  At some point I'll make this based on an
-   env var.
+ * 2812 - this is the web interface for `monit`.  See Environment Variables for
+   user and password.
 
 ## Notes on running on Ubuntu
 
