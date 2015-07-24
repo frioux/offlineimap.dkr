@@ -58,6 +58,15 @@ There is one required environment variable and a few optional ones:
  2. `MEMORY_LIMIT` - this is the memory limit applied via `monit`.  Default is
     `1 GB`.
 
+ 3. `MONIT_LISTEN_HTTP` - set this to true if you would like to use the monit
+    web interface
+
+ 4. `MEMORY_USER` - set this to the username you want to use when connecting to
+    the monit web interface.
+
+ 5. `MEMORY_PASSWORD` - set this to the password you want to use when connecting
+    to the monit web interface.
+
 ## Ports
 
 There's just one port:

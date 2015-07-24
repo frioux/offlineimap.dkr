@@ -18,10 +18,12 @@ set daemon 15
 
 set logfile /proc/self/fd/1
 
+[% IF MONIT_LISTEN_HTTP %]
 set httpd
   port 2812
-  use address 127.0.0.1
-  allow frew:test
+  use address 0.0.0.0
+  allow [% MONIT_USER || 'frew' %]:[% MONIT_PASSWORD || 'test' %]
+[% END %]
 
 check process cerberus
   with pidfile /home/user/services/cerberus/supervise/pid
