@@ -3,7 +3,8 @@
 export HOME=/home/user
 
 cd $HOME/services
-chmod 600 /home/user/.monitrc
 perl -MTemplate -E'Template->new(ABSOLUTE=>1)->process(q(/home/user/offlineimaprc.tt), \%ENV) or die Template->error' > /home/user/.offlineimaprc
-chown user /opt/log /opt/var /home/user/.offlineimaprc -R
+perl -MTemplate -E'Template->new(ABSOLUTE=>1)->process(q(/home/user/monitrc.tt), \%ENV) or die Template->error' > /home/user/.monitrc
+chown user /opt/log /opt/var /home/user/.offlineimaprc /home/user/.monitrc -R
+chmod 600 /home/user/.monitrc
 exec 2>&1 sudo -u user runsvdir -P .

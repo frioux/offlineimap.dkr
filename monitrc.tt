@@ -30,4 +30,4 @@ check process offlineimap
   with pidfile /home/user/services/offlineimap/supervise/pid
   start program = "/usr/bin/env SVDIR=/home/user/services /usr/bin/sv start offlineimap"
    stop program = "/usr/bin/env SVDIR=/home/user/services /usr/bin/sv  stop offlineimap"
-  if memory > 1 GB for 5 cycles then restart
+  if memory > [% MEMORY_LIMIT || '1 GB' %] for 5 cycles then restart

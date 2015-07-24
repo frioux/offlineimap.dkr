@@ -49,6 +49,15 @@ should set up to use this:
 
  4. _/opt/log_ - this is the directory where logs for `offlineimap`, `monit`, and `cerberus` go.
 
+## Environment Variables
+
+There is one required environment variable and a few optional ones:
+
+ 1. `EMAIL` - this is the email address you want to be syncing. **required**
+
+ 2. `MEMORY_LIMIT` - this is the memory limit applied via `monit`.  Default is
+    `1 GB`.
+
 ## Ports
 
 There's just one port:

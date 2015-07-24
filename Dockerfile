@@ -26,7 +26,7 @@ ADD ./user_services /home/user/services
 ADD ./offlineimaprc.tt /home/user/offlineimaprc.tt
 ADD ./offlineimap.py /home/user/.offlineimap.py
 ADD ./bin/cerberus /home/user/bin/cerberus
-ADD ./monitrc /home/user/.monitrc
+ADD ./monitrc.tt /home/user/monitrc.tt
 
 RUN apt-add-repository -y ppa:rsrchboy/offline-mail \
  && env DEBIAN_FRONTEND=noninteractive apt-get update \
