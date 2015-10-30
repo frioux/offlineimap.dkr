@@ -61,10 +61,10 @@ There is one required environment variable and a few optional ones:
  3. `MONIT_LISTEN_HTTP` - set this to true if you would like to use the monit
     web interface
 
- 4. `MEMORY_USER` - set this to the username you want to use when connecting to
+ 4. `MONIT_USER` - set this to the username you want to use when connecting to
     the monit web interface.
 
- 5. `MEMORY_PASSWORD` - set this to the password you want to use when connecting
+ 5. `MONIT_PASSWORD` - set this to the password you want to use when connecting
     to the monit web interface.
 
 ## Ports
