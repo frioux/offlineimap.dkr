@@ -26,18 +26,7 @@ ADD ./user_services /home/user/services
 ADD ./offlineimaprc.tt /home/user/offlineimaprc.tt
 ADD ./offlineimap.py /home/user/.offlineimap.py
 ADD ./bin/cerberus /home/user/bin/cerberus
+ADD ./bin/setup /usr/local/bin/setup
 ADD ./monitrc.tt /home/user/monitrc.tt
 
-RUN apt-add-repository -y ppa:rsrchboy/offline-mail \
- && env DEBIAN_FRONTEND=noninteractive apt-get update \
- && useradd user \
- && ln -s /opt/etc/netrc /home/user/.netrc \
- && ln -s /opt/var/index /home/user/.offlineimap \
- && chown 1000:1000 /opt/var/mail /opt/var/index /home/user -R \
- && env DEBIAN_FRONTEND=noninteractive apt-get install --no-install-recommends -y \
-    daemontools                                \
-    libio-all-perl                             \
-    libtemplate-perl                           \
-    monit                                      \
-    offlineimap                                \
-    sudo
+RUN /usr/local/bin/setup
