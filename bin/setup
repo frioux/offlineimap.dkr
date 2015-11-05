@@ -12,7 +12,6 @@ ln -s /opt/etc/netrc /home/user/.netrc
 ln -s /opt/var/index /home/user/.offlineimap
 chown 1000:1000 /opt/var/mail /opt/var/index /home/user -R
 apt-get install --no-install-recommends -y \
-   libio-all-perl                          \
    libkqueue0                              \
    libtemplate-perl                        \
    offlineimap                             \

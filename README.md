@@ -14,12 +14,7 @@
 
 If you care about having all your email at your fingertips,
 [`offlineimap`](http://offlineimap.org/) is an excellent tool to acheive that
-lofty goal.  Unfortunately, `offlineimap` tends to be a little bit buggy.  This
-container helps to keep `offlineimap` running.  There are two main functions
-with a few smaller bits and bobs.
-
- 1. [Restart OfflineIMAP after it
-    hangs](https://github.com/frioux/offlineimap/blob/master/bin/cerberus#L30) - achieved with ~20 lines of Perl
+lofty goal.
 
 ## Beware
 
@@ -46,7 +41,7 @@ should set up to use this:
     metadata.  If you don't make this volume offlineimap will have to reindex
     all  your mail every time you start the container afresh. **highly recommended**
 
- 4. _/opt/log_ - this is the directory where logs for `offlineimap`, and `cerberus` go.
+ 4. _/opt/log_ - this is the directory where logs for `offlineimap` go.
 
 ## Environment Variables
 
