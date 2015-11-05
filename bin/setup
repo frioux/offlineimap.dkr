@@ -3,6 +3,7 @@
 set -e
 
 export DEBIAN_FRONTEND=noninteractive
+export URL_ROOT=http://homepage.ntlworld.com/jonathan.deboynepollard/Softwares/nosh
 
 apt-add-repository -y ppa:rsrchboy/offline-mail
 apt-get update
@@ -11,9 +12,19 @@ ln -s /opt/etc/netrc /home/user/.netrc
 ln -s /opt/var/index /home/user/.offlineimap
 chown 1000:1000 /opt/var/mail /opt/var/index /home/user -R
 apt-get install --no-install-recommends -y \
-   daemontools                             \
    libio-all-perl                          \
+   libkqueue0                              \
    libtemplate-perl                        \
    monit                                   \
    offlineimap                             \
-   sudo
+   sudo                                    \
+   wget
+
+wget \
+   $URL_ROOT/nosh-exec_1.21_amd64.deb
+
+dpkg -i nosh-exec_1.21_amd64.deb
+
+rm nosh-exec_1.21_amd64.deb
+apt-get remove -y wget
+apt-get clean
