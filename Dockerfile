@@ -26,6 +26,7 @@ ADD ./user_services /home/user/services
 ADD ./offlineimaprc.tt /home/user/offlineimaprc.tt
 ADD ./offlineimap.py /home/user/.offlineimap.py
 ADD ./bin/cerberus /home/user/bin/cerberus
+ADD ./bin/generate_configs /usr/local/bin/generate_configs
 ADD ./bin/setup /usr/local/bin/setup
 ADD ./monitrc.tt /home/user/monitrc.tt
 
