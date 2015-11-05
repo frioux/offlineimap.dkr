@@ -18,8 +18,7 @@ lofty goal.  Unfortunately, `offlineimap` tends to be a little bit buggy.  This
 container helps to keep `offlineimap` running.  There are two main functions
 with a few smaller bits and bobs.
 
- 1. [Restart OfflineIMAP after it leaks to 1 GB](https://github.com/frioux/offlineimap/blob/master/monitrc) - achieved with [monit](http://mmonit.com/monit/)
- 2. [Restart OfflineIMAP after it
+ 1. [Restart OfflineIMAP after it
     hangs](https://github.com/frioux/offlineimap/blob/master/bin/cerberus#L30) - achieved with ~20 lines of Perl
 
 ## Beware
@@ -47,39 +46,13 @@ should set up to use this:
     metadata.  If you don't make this volume offlineimap will have to reindex
     all  your mail every time you start the container afresh. **highly recommended**
 
- 4. _/opt/log_ - this is the directory where logs for `offlineimap`, `monit`, and `cerberus` go.
+ 4. _/opt/log_ - this is the directory where logs for `offlineimap`, and `cerberus` go.
 
 ## Environment Variables
 
-There is one required environment variable and a few optional ones:
+There is one required environment variable:
 
- 1. `EMAIL` - this is the email address you want to be syncing. **required**
-
- 2. `MEMORY_LIMIT` - this is the memory limit applied via `monit`.  Default is
-    `1 GB`.
-
- 3. `MONIT_LISTEN_HTTP` - set this to true if you would like to use the monit
-    web interface
-
- 4. `MONIT_USER` - set this to the username you want to use when connecting to
-    the monit web interface.
-
- 5. `MONIT_PASSWORD` - set this to the password you want to use when connecting
-    to the monit web interface.
-
-## Ports
-
-There's just one port:
-
- * 2812 - this is the web interface for `monit`.  See Environment Variables for
-   user and password.
-
-## Notes on running on Ubuntu
-
-If you care about the memory leak thing (it only happens on one of the three
-machines I use, so you might not) you need to enable `ptrace` for `docker`.  On
-my system, ubuntu 14.10, I had to enable `ptrace` by adding `ptrace,` to the
-first list of options in _/etc/apparmor.d/docker_.
+ 1. `EMAIL` - this is the email address you want to be syncing.
 
 ## Ideas for the future
 

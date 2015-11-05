@@ -19,7 +19,6 @@ MAINTAINER Arthur Axel fREW Schmidt <frioux@gmail.com>
 
 CMD ["/sbin/my_init"]
 VOLUME ["/opt/var/mail", "/opt/var/index", "/opt/log", "/opt/etc"]
-EXPOSE 2812
 
 ADD ./services/ /etc/service/user
 ADD ./user_services /home/user/services
@@ -28,6 +27,5 @@ ADD ./offlineimap.py /home/user/.offlineimap.py
 ADD ./bin/cerberus /home/user/bin/cerberus
 ADD ./bin/generate_configs /usr/local/bin/generate_configs
 ADD ./bin/setup /usr/local/bin/setup
-ADD ./monitrc.tt /home/user/monitrc.tt
 
 RUN /usr/local/bin/setup
