@@ -3,4 +3,5 @@
 export HOME=/home/user
 
 perl -MTemplate -E'Template->new(ABSOLUTE=>1)->process(q(/home/user/offlineimaprc.tt), \%ENV) or die Template->error' > $HOME/.offlineimaprc
-chown user /opt/log /opt/var $HOME/.offlineimaprc -R
+
+exec "$@"

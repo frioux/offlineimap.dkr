@@ -1,4 +1,4 @@
-FROM phusion/baseimage:0.9.16
+FROM ubuntu:14.04
 MAINTAINER Arthur Axel fREW Schmidt <frioux@gmail.com>
 
 # Dockerfile defining a robust offlineimap container
@@ -17,11 +17,9 @@ MAINTAINER Arthur Axel fREW Schmidt <frioux@gmail.com>
 #  See the License for the specific language governing permissions and
 #  limitations under the License.
 
-CMD ["/sbin/my_init"]
+CMD ["/usr/local/bin/generate_configs", "offlineimap"]
 VOLUME ["/opt/var/mail", "/opt/var/index", "/opt/log", "/opt/etc"]
 
-ADD ./services/ /etc/service/user
-ADD ./user_services /home/user/services
 ADD ./offlineimaprc.tt /home/user/offlineimaprc.tt
 ADD ./offlineimap.py /home/user/.offlineimap.py
 ADD ./bin/generate_configs /usr/local/bin/generate_configs

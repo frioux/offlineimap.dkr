@@ -5,17 +5,23 @@ set -e
 export DEBIAN_FRONTEND=noninteractive
 export URL_ROOT=http://homepage.ntlworld.com/jonathan.deboynepollard/Softwares/nosh
 
-apt-add-repository -y ppa:rsrchboy/offline-mail
+# this allows us to avoid apt-add-repository and it's many deps
+echo "deb http://ppa.launchpad.net/rsrchboy/offline-mail/ubuntu trusty main" >> /etc/apt/sources.list
+apt-get update >> /dev/null 2> /tmp/foo_apt_add_key.txt
+key=$(cat /tmp/foo_apt_add_key.txt | cut -d":" -f6 | cut -d" " -f3)
+apt-key adv --keyserver keyserver.ubuntu.com --recv-keys $key
+rm -rf /tmp/foo_apt_add_key.txt
+
 apt-get update
 useradd user
 ln -s /opt/etc/netrc /home/user/.netrc
 ln -s /opt/var/index /home/user/.offlineimap
 chown 1000:1000 /opt/var/mail /opt/var/index /home/user -R
 apt-get install --no-install-recommends -y \
+   ca-certificates                         \
    libkqueue0                              \
    libtemplate-perl                        \
    offlineimap                             \
-   sudo                                    \
    wget
 
 wget \
