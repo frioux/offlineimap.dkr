@@ -41,7 +41,7 @@ keepalive = 60
 holdconnectionopen = yes
 maxconnections = 1
 type = Gmail
-remoteuser = [% EMAIL %]
+remoteuser = EMAILADDRESS
 foldersort = mycmp
 
 nametrans = lambda foldername: re.sub ('^\[Gmail\]', 'gmail',

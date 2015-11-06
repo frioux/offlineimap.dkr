@@ -1,34 +1,29 @@
-#!/bin/dash
+#!/bin/sh
 
 set -e
 
-export DEBIAN_FRONTEND=noninteractive
-export URL_ROOT=http://homepage.ntlworld.com/jonathan.deboynepollard/Softwares/nosh
+apk add --update python git ca-certificates
 
-# this allows us to avoid apt-add-repository and it's many deps
-echo "deb http://ppa.launchpad.net/rsrchboy/offline-mail/ubuntu trusty main" >> /etc/apt/sources.list
-apt-get update >> /dev/null 2> /tmp/foo_apt_add_key.txt
-key=$(cat /tmp/foo_apt_add_key.txt | cut -d":" -f6 | cut -d" " -f3)
-apt-key adv --keyserver keyserver.ubuntu.com --recv-keys $key
-rm -rf /tmp/foo_apt_add_key.txt
+cd /tmp
+git clone git://github.com/OfflineIMAP/offlineimap
+cd offlineimap
+git checkout v6.5.7
+python setup.py build
+python setup.py install
+cd /
+rm /tmp/offlineimap -rf
 
-apt-get update
-useradd user
+adduser -D -h /home/user -u 1000 user
+
 ln -s /opt/etc/netrc /home/user/.netrc
 ln -s /opt/var/index /home/user/.offlineimap
-chown 1000:1000 /opt/var/mail /opt/var/index /home/user -R
-apt-get install --no-install-recommends -y \
-   ca-certificates                         \
-   libkqueue0                              \
-   libtemplate-perl                        \
-   offlineimap                             \
-   wget
+chown 1000 /opt/var/mail /opt/var/index /home/user -R
 
-wget \
-   $URL_ROOT/nosh-exec_1.21_amd64.deb
+apk del git
 
-dpkg -i nosh-exec_1.21_amd64.deb
-
-rm nosh-exec_1.21_amd64.deb
-apt-get remove -y wget
-apt-get clean
+rm -rf /usr/lib/python2.7/distutils  \
+       /usr/lib/python2.7/idlelib    \
+       /usr/lib/python2.7/lib-tk     \
+       /usr/lib/python2.7/ensurepip  \
+       /usr/lib/python2.7/pydoc_data \
+       /var/cache/apk/*

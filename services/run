@@ -1,7 +1,0 @@
-#!/bin/dash
-
-export HOME=/home/user
-
-cd $HOME/services
-generate_configs
-exec 2>&1 sudo -u user runsvdir -P .

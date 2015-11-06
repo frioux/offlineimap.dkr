@@ -1,4 +1,4 @@
-FROM ubuntu:14.04
+FROM alpine:3.2
 MAINTAINER Arthur Axel fREW Schmidt <frioux@gmail.com>
 
 # Dockerfile defining a robust offlineimap container
@@ -20,7 +20,7 @@ MAINTAINER Arthur Axel fREW Schmidt <frioux@gmail.com>
 CMD ["/usr/local/bin/generate_configs", "offlineimap"]
 VOLUME ["/opt/var/mail", "/opt/var/index", "/opt/log", "/opt/etc"]
 
-ADD ./offlineimaprc.tt /home/user/offlineimaprc.tt
+ADD ./offlineimaprc /home/user/.offlineimaprc
 ADD ./offlineimap.py /home/user/.offlineimap.py
 ADD ./bin/generate_configs /usr/local/bin/generate_configs
 ADD ./bin/setup /usr/local/bin/setup

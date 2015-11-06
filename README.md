@@ -5,7 +5,6 @@
        docker run -d --name offlineimap          \
           -v             ~/.netrc:/opt/etc/netrc \
           -v           ~/var/mail:/opt/var/mail  \
-          -v   ~/.offlineimap/log:/opt/log       \
           -v ~/.offlineimap/index:/opt/var/index \
           --env EMAIL=frioux@gmail.com           \
           --restart=always frew/offlineimap
@@ -40,8 +39,6 @@ should set up to use this:
  3. _/opt/var/index_ - this is directory where `offlineimap` stores its
     metadata.  If you don't make this volume offlineimap will have to reindex
     all  your mail every time you start the container afresh. **highly recommended**
-
- 4. _/opt/log_ - this is the directory where logs for `offlineimap` go.
 
 ## Environment Variables
 

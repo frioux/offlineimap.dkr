@@ -1,3 +1,0 @@
-#!/bin/dash
-
-exec sudo -u user cyclog /opt/log/user <&0
