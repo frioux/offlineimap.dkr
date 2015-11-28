@@ -17,12 +17,15 @@ MAINTAINER Arthur Axel fREW Schmidt <frioux@gmail.com>
 #  See the License for the specific language governing permissions and
 #  limitations under the License.
 
-CMD ["/usr/local/bin/generate_configs", "offlineimap"]
-VOLUME ["/opt/var/mail", "/opt/var/index", "/opt/log", "/opt/etc"]
+CMD ["/usr/local/bin/generate_configs", "s6-svscan", "-S", "-t", "0", "/home/user/services"]
+# declaring the volume makes it owned by root.  Lame.
+# VOLUME ["/opt/var/mail", "/opt/var/index", "/opt/log/offlineimap", "/opt/etc"]
 
 ADD ./offlineimaprc /home/user/.offlineimaprc
 ADD ./offlineimap.py /home/user/.offlineimap.py
 ADD ./bin/generate_configs /usr/local/bin/generate_configs
 ADD ./bin/setup /usr/local/bin/setup
+ADD ./bin/cerberus /usr/local/bin/cerberus
+ADD ./services /home/user/services
 
 RUN /usr/local/bin/setup

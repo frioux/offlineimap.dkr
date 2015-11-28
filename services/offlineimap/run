@@ -1,0 +1,4 @@
+#!/bin/execlineb
+
+fdmove -c 2 1
+offlineimap

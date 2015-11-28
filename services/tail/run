@@ -1,0 +1,3 @@
+#!/bin/execlineb
+
+tail -F /opt/log/offlineimap/current /opt/log/cerberus/current

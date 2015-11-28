@@ -13,14 +13,11 @@
 
 If you care about having all your email at your fingertips,
 [`offlineimap`](http://offlineimap.org/) is an excellent tool to acheive that
-lofty goal.
-
-## Beware
-
-Before going much further I have to say: I have done nothing to make this
-project work for anyone other than me.  It can definitely be done, and the most
-important parts are already generic, but realize that this is very much a work
-in progress and was not made to serve the general public.
+lofty goal. Unfortunately, `offlineimap` tends to be a little bit buggy.  This
+container helps to keep `offlineimap` running.  Currently it [restarts
+OfflineIMAP after it
+hangs](https://github.com/frioux/offlineimap/blob/master/bin/cerberus#L19) with
+~30 lines of Python.
 
 ## Volumes
 
@@ -39,6 +36,9 @@ should set up to use this:
  3. _/opt/var/index_ - this is directory where `offlineimap` stores its
     metadata.  If you don't make this volume offlineimap will have to reindex
     all  your mail every time you start the container afresh. **highly recommended**
+
+ 4. _/opt/var/log_ - this is where the logs are kept.  You can mount this if you
+    want, but I set up a `tail` to docker's built in logs.
 
 ## Environment Variables
 
