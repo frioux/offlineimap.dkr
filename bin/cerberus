@@ -21,7 +21,6 @@ import subprocess
 import os.path
 
 d = '/home/user/services/offlineimap'
-period = 60 * 10
 
 def running():
   p = subprocess.Popen(['s6-svok', d])
@@ -40,7 +39,7 @@ def kill_it():
   f.close()
 
 while True:
-  time.sleep(period)
+  time.sleep(60)
 
-  if running() and time.time() > last_logged() + period:
+  if running() and time.time() > last_logged() + 10 * 60:
     kill_it()
