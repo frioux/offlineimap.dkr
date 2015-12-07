@@ -9,7 +9,7 @@ apk add python git ca-certificates s6
 cd /tmp
 git clone git://github.com/OfflineIMAP/offlineimap
 cd offlineimap
-git checkout v6.5.7
+git checkout v6.6.0
 python setup.py build
 python setup.py install
 cd /
