@@ -37,6 +37,7 @@ nametrans = lambda foldername: re.sub ('^gmail\.', '[Gmail].',
                                )
 [Repository gmail-remote]
 # where the hell is the actual doc for this stuff?
+idlefolders = ['INBOX']
 keepalive = 60
 holdconnectionopen = yes
 maxconnections = 1
