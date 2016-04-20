@@ -17,7 +17,10 @@ lofty goal. Unfortunately, `offlineimap` tends to be a little bit buggy.  This
 container helps to keep `offlineimap` running.  Currently it [restarts
 OfflineIMAP after it
 hangs](https://github.com/frioux/offlineimap/blob/master/bin/cerberus#L19) with
-~30 lines of Python.
+~30 lines of Python.  Note that I try to keep it on the latest and greatest
+OfflineIMAP.  Currently it's using the newest release (v6.7.0) and a patch to
+fix [a bug in OfflineIMAP and Python with netrc
+parsing](https://github.com/OfflineIMAP/offlineimap/issues/295).
 
 ## Volumes
 
