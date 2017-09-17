@@ -1,5 +1,5 @@
 FROM alpine:3.4
-MAINTAINER Arthur Axel fREW Schmidt <frioux@gmail.com>
+MAINTAINER Arthur Axel fREW Schmidt <offlineimap@afoolishmanifesto.com>
 
 # Dockerfile defining a robust offlineimap container
 #
